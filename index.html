@@ -27,7 +27,12 @@
     font-family:'Inter', sans-serif;
     scroll-behavior:smooth;
   }
-
+.footer-brand-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--gold); /* Changes the icon color to match your portfolio's gold accent theme */
+    flex-shrink: 0;
+  }
   canvas#bg{
     position:fixed;
     top:0; left:0;
@@ -267,20 +272,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  min-height: 40vh; /* Takes up clean breathing space in the middle of the screen */
-  padding: 40px 0 20px;
+  width: 100%; /* Changed from 70% to 100% to allow true page centering */
+  min-height: 30vh; /* Slightly reduced height footprint */
+  padding: 60px 0 10px;
   text-align: center;
 }
 
 .simple-brand-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(248px, 8vw, 296px); /* Scales perfectly from mobile to large screens */
-  font-weight: 1700;
-  letter-spacing: 0.04em;
+  font-size: clamp(48px, 8.5vw, 84px); /* Reduced maximum desktop size from 110px to 84px */
+  font-weight: 700;
+  letter-spacing: -0.04em;
   text-transform: lowercase;
-  padding : 50px;
-  margin: 5px ;
+  margin: 0 auto; /* Ensures solid structural centering */
+  padding: 10px 0;
+  background: linear-gradient(135deg, #ffffff 30%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(232, 195, 117, 0.15));
+}
   
   /* High-end clean metallic gold gradient to match your galaxy aesthetic */
   background: linear-gradient(135deg, #ffffff 30%, var(--gold) 100%);
@@ -371,13 +381,12 @@
     .main-footer { padding: 40px 8vw; }
 
   
-    .brand-hero-container {
-      min-height: 25vh; 
+.brand-hero-container {
+      min-height: 20vh; 
       padding: 40px 0 10px;
     }
-
     .simple-brand-title {
-      font-size: clamp(38px, 12vw, 64px); 
+      font-size: clamp(34px, 10vw, 52px); /* Scales the downsized font beautifully on mobile screens */
       padding: 10px 0;
     }
   }
@@ -554,7 +563,13 @@
 
     </div>
   </section>
-
+<footer class="main-footer">
+  <div class="footer-inner">
+    
+    <!-- Left Side: Copyright -->
+    <div class="footer-left">
+      <p class="copyright">&copy; 2026 cookedup. All rights reserved.</p>
+    </div>
 <script>
 // ---------------- galaxy background (same engine as space-bg) ----------------
 const canvas = document.getElementById('bg');
